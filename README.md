@@ -1,5 +1,5 @@
 # How to run?
-Install all
+Install all and then
 Set data qris on server.js
 
 ```bash
@@ -10,8 +10,10 @@ Get Url example
 ```
 https://127.0.0.1:{port}/generate-qris?nominal=1000&taxtype=p&fee=5
 ```
-Get Url example using different data
+Get Url example using different qris data
+```
 https://127.0.0.1:{port}/generate-qris?nominal=10000&taxtype=p&fee=5&qrisStatis=00020101021126570011ID.DANA.WWW011893600915334652057802093465205780303UMI51440014ID.CO.QRIS.WWW0215ID10222245683710303UMI5204549953033605802ID5913Lala%27s%20Store%206011Kab.%20Bekasi61051732063045A8A00020101021126570011ID.DANA.WWW011893600915334652057802093465205780303UMI51440014ID.CO.QRIS.WWW0215ID10222245683710303UMI5204549953033605802ID5913Lala%27s%20Store%206011Kab.%20Bekasi61051732063045A8A
+```
 
 
 # Qris Static to Qris Dynamic
