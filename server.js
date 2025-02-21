@@ -23,6 +23,7 @@ app.get('/generate-qris', (req, res) => {
     let nominal = parseInt(req.query.nominal) || 5000; //default 5000
     let taxtype = req.query.taxtype || null;
     let fee = parseInt(req.query.fee) || 0;
+    let qrisStatisParam = req.query.qrisStatis || qrisStatis;
 
     if (taxtype === 'p') {  
         fee = Math.round((nominal * fee) / 100);
@@ -41,10 +42,10 @@ app.get('/generate-qris', (req, res) => {
     }, null, 2));
 
     try {        
-        const qrisDinamisString = makeString(qrisStatis, { nominal: totalNominal });
+        const qrisDinamisString = makeString(qrisStatisParam, { nominal: totalNominal });
 
         const outputPath = path.join(qrisFolder, `qris_${nominal}_${Date.now()}.png`);
-        makeFile(qrisStatis, { nominal: totalNominal, path: outputPath });
+        makeFile(qrisStatisParam, { nominal: totalNominal, path: outputPath });
 
         res.json({
             status: "success",
